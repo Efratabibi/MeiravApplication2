@@ -29,7 +29,10 @@
         <activity android:name=".ultra" />
         <activity android:name=".results" />
         <activity android:name=".memo" />
-        <activity android:name=".SecMainActivity"></activity>
+        <activity android:name=".SecMainActivity" />
+        <activity android:name=".TechOnTheWay" />
+        <activity android:name=".WhatsNext" />
+        <activity android:name=".AddPatient"></activity>
     </application>
 
 </manifest>

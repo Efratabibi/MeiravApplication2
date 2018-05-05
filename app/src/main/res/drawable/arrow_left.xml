@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item>
-        <rotate android:fromDegrees="45" android:toDegrees="45" android:pivotX="13%" android:pivotY="-40%" >
-            <shape android:shape="rectangle" >
-                <stroke android:color="#ff96d6" android:width="0dp"/>
-                <solid android:color="#d7d2cb" />
-            </shape>
-        </rotate>
-    </item>
+<item>
+    <rotate android:fromDegrees="45" android:toDegrees="45" android:pivotX="13%" android:pivotY="-40%" >
+        <shape android:shape="rectangle" >
+            <stroke android:color="#0d39c9" android:width="0dp"/>
+            <solid android:color="#0d39c9" />
+            <frame xmlns:app="http://schemas.android.com/apk/res-auto"></frame>
+        </shape>
+    </rotate>
+</item>
 </layer-list>

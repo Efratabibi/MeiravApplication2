@@ -8,6 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ListView;
+
+import java.util.List;
 
 public class memo extends AppCompatActivity {
 
@@ -26,7 +30,10 @@ public class memo extends AppCompatActivity {
         button2.setClickable(false);
         button3.setClickable(false);
         button4.setClickable(false);
-
+        List<Patient> PatientsMemo;
+        AdapterMemoPatient adapter;
+        ListView mListView;
+        mListView = (ListView) findViewById(R.id.listView);
         Button ultra = (Button) findViewById(R.id.button7);
         ultra.setOnClickListener(new View.OnClickListener() {
 
@@ -36,7 +43,9 @@ public class memo extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+
+
+        ImageButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +53,11 @@ public class memo extends AppCompatActivity {
                 startActivity(macintoshIntent2);
             }
         });
+
+        DatabaseAccess db = new DatabaseAccess(this);
+        PatientsMemo = db.getAllMemoPatients();
+        adapter = new AdapterMemoPatient(this, R.layout.adapter_tech_layout, PatientsMemo);
+        mListView.setAdapter(adapter);
 
     }
 }

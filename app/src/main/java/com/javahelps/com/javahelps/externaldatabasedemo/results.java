@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.List;
 
 public class results extends AppCompatActivity {
 
@@ -27,7 +30,10 @@ public class results extends AppCompatActivity {
         button3.setClickable(false);
         button4.setClickable(false);
 
-
+        List<Patient> PatientsResults;
+        AdapterResultsPatient adapter;
+        ListView mListView;
+        mListView = (ListView) findViewById(R.id.listView);
 
         Button ultra = (Button) findViewById(R.id.button3);
         ultra.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +52,11 @@ public class results extends AppCompatActivity {
                 startActivity(macintoshIntent2);
             }
         });
+
+        DatabaseAccess db = new DatabaseAccess(this);
+        PatientsResults = db.getAllResultsPatients();
+        adapter = new AdapterResultsPatient(this, R.layout.adapter_results_layout, PatientsResults);
+        mListView.setAdapter(adapter);
 
     }
 }

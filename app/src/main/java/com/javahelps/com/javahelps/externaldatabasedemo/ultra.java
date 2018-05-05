@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.List;
 
 public class ultra extends AppCompatActivity {
 
@@ -26,7 +29,10 @@ public class ultra extends AppCompatActivity {
         button2.setClickable(false);
         button3.setClickable(false);
 
-
+        List<Patient> PatientsUltra;
+        AdapterUltraPatient adapter;
+        ListView mListView;
+        mListView = (ListView) findViewById(R.id.listView);
 
         Button ultra = (Button) findViewById(R.id.button7);
         ultra.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +62,11 @@ public class ultra extends AppCompatActivity {
                 startActivity(macintoshIntent2);
             }
         });
+
+        DatabaseAccess db = new DatabaseAccess(this);
+        PatientsUltra = db.getAllUltraPatients();
+        adapter = new AdapterUltraPatient(this, R.layout.adapter_ultra_layout, PatientsUltra);
+        mListView.setAdapter(adapter);
 
     }
 }

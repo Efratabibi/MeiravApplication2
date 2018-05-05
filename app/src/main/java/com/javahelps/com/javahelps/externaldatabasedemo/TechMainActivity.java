@@ -37,11 +37,20 @@ public class TechMainActivity extends AppCompatActivity {
         Button buttonwaiting = (Button) findViewById(R.id.b3);
         buttonwaiting.setOnClickListener(new OnClickListener() {
 
-                                                  public void onClick(View view) {
-                                                      Intent macintoshIntent = new Intent(TechMainActivity.this, memo.class);
-                                                      startActivity(macintoshIntent);
-                                                  }
-                                              });
+            public void onClick(View view) {
+                Intent macintoshIntent = new Intent(TechMainActivity.this, memo.class);
+                startActivity(macintoshIntent);
+            }
+        });
+
+        Button buttonontheway = (Button) findViewById(R.id.b2);
+        buttonontheway.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View view) {
+                Intent macintoshIntent2 = new Intent(TechMainActivity.this, TechOnTheWay.class);
+                startActivity(macintoshIntent2);
+            }
+        });
 
        /* Start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

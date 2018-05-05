@@ -94,10 +94,12 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(macintoshIntent);
                             finish();
                         }
-                        if (issecretary.get(UserNames.indexOf(EnteredUserName)).equals("1")) {
-                            Intent macintoshIntent2 = new Intent(LoginActivity.this, SecMainActivity.class);
-                            startActivity(macintoshIntent2);
-                            finish();
+                        else {
+                            if (issecretary.get(UserNames.indexOf(EnteredUserName)).equals("1")) {
+                                Intent macintoshIntent2 = new Intent(LoginActivity.this, SecMainActivity.class);
+                                startActivity(macintoshIntent2);
+                                finish();
+                            }
                         }
                     } else {
                         Toast.makeText(LoginActivity.this, "הסיסמא שהזנת שגויה", Toast.LENGTH_LONG).show();
