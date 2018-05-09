@@ -25,7 +25,7 @@ public class Report extends AppCompatActivity {
 
         barChart=(BarChart) findViewById(R.id.barchart);
 
-         barChart.setDrawBarShadow(false);
+        barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);
         barChart.setMaxVisibleValueCount(50);
         barChart.setPinchZoom(false);
