@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 
 public class TechMainActivity extends AppCompatActivity {
-    private TextView textView;
     private TextView textView2;
 
     @Override
@@ -30,10 +29,9 @@ public class TechMainActivity extends AppCompatActivity {
         System.out.println("זמן נוכחי => "+c.getTime());
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd\nHH:mm");
         String formattedDate = df.format(c.getTime());
-        this.textView=(TextView) findViewById(R.id.textView2);
-        textView.setText(formattedDate);
         this.textView2=(TextView) findViewById(R.id.textView1);
-        textView2.setText("ברוכה הבאה");
+        Globals g = Globals.getInstance();
+        textView2.setText(g.getTechName()+", ברוכה הבאה! ");
         Button buttonwaiting = (Button) findViewById(R.id.b3);
         buttonwaiting.setOnClickListener(new OnClickListener() {
 
@@ -52,6 +50,15 @@ public class TechMainActivity extends AppCompatActivity {
             }
         });
 
+        Button navi = (Button) findViewById(R.id.b3);
+        navi.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View view) {
+                Intent macintoshIntent2 = new Intent(TechMainActivity.this, navitech.class);
+                startActivity(macintoshIntent2);
+            }
+        });
+
        /* Start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent loginintent = new Intent(TechMainActivity.this, LoginActivity.class);
@@ -60,7 +67,14 @@ public class TechMainActivity extends AppCompatActivity {
 
             }
         }); */
+        Button logout = (Button) findViewById(R.id.b4);
+        logout.setOnClickListener(new OnClickListener() {
 
+            public void onClick(View view) {
+                Intent macintoshIntent3 = new Intent(TechMainActivity.this, LoginActivity.class);
+                startActivity(macintoshIntent3);
+            }
+        });
 
 
     }

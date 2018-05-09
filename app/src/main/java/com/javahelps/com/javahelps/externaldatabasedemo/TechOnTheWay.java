@@ -22,7 +22,7 @@ public class TechOnTheWay extends AppCompatActivity {
         setContentView(R.layout.activity_tech_on_the_way);
         mListView = (ListView) findViewById(R.id.listView);
         DatabaseAccess db = new DatabaseAccess(this);
-        Patients = db.getAllPatients();
+        Patients = db.getAllPatientsTech();
         adapter = new AdapterPatientWithoutCheckbox(this, R.layout.adapter_view_layout_without_checkbox, Patients);
         CheckBox checkB = (CheckBox) findViewById(R.id.checkbox);
         mListView.setAdapter(adapter);

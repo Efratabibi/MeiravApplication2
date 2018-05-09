@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         // Set up the login form.
         mUserName = (EditText) findViewById(R.id.txtUserName);
         mPasswordView = (EditText) findViewById(R.id.txtPassword);
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        final DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
         final List<String> UserNames = databaseAccess.getUserNames();
         final List<String> Passwords = databaseAccess.getPasswords();
@@ -90,12 +90,14 @@ public class LoginActivity extends AppCompatActivity {
                 if (UserNames.contains(EnteredUserName)) {
                     if (Passwords.indexOf(EnteredPass)==UserNames.indexOf(EnteredUserName)){
                         if (istech.get(UserNames.indexOf(EnteredUserName)).equals("1")) {
+                            String empName=databaseAccess.getTechDetails(EnteredUserName);
                             Intent macintoshIntent = new Intent(LoginActivity.this, TechMainActivity.class);
                             startActivity(macintoshIntent);
                             finish();
                         }
                         else {
                             if (issecretary.get(UserNames.indexOf(EnteredUserName)).equals("1")) {
+                                String empName=databaseAccess.getTechDetails(EnteredUserName);
                                 Intent macintoshIntent2 = new Intent(LoginActivity.this, SecMainActivity.class);
                                 startActivity(macintoshIntent2);
                                 finish();

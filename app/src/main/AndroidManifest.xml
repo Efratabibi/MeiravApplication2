@@ -24,15 +24,23 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name=".TechMainActivity" />
         <activity android:name=".ultra" />
         <activity android:name=".results" />
         <activity android:name=".memo" />
-        <activity android:name=".SecMainActivity" />
+        <activity
+            android:name=".SecMainActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name=".TechOnTheWay" />
         <activity android:name=".WhatsNext" />
-        <activity android:name=".AddPatient"></activity>
+        <activity android:name=".AddPatient" />
+        <activity
+            android:name=".navitech"
+            android:label="@string/title_activity_navitech"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Report"></activity>
     </application>
 
 </manifest>

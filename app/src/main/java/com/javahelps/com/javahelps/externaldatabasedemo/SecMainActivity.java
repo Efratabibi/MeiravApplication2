@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -96,12 +97,12 @@ public class SecMainActivity extends AppCompatActivity {
 
         });
 
-        Button Add = (Button) findViewById(R.id.Add);
+        ImageButton Add = (ImageButton) findViewById(R.id.Add);
         Add.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent macintoshIntent = new Intent(SecMainActivity.this, AddPatient.class);
+                Intent macintoshIntent = new Intent(SecMainActivity.this, Report.class);
                 startActivity(macintoshIntent);
                 finish();
             }

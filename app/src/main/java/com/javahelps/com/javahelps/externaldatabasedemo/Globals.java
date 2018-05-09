@@ -4,18 +4,26 @@ public class Globals {
     private static Globals instance;
 
     // Global variable
-    private String tech;
+    private String TechName;
+    private String TechId;
     private String PatientId;
     private String Test;
 
     // Restrict the constructor from being instantiated
     private Globals(){}
 
-    public void setTech(String tech){
-        this.tech=tech;
+    public void setTechName(String TechName){
+        this.TechName=TechName;
     }
-    public String getTech(){
-        return this.tech;
+    public String getTechName(){
+        return this.TechName;
+    }
+
+    public void setTechId(String TechId){
+        this.TechId=TechId;
+    }
+    public String getTechId(){
+        return this.TechId;
     }
 
     public void setPatientId(String PatientId){

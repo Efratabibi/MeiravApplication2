@@ -3,6 +3,7 @@ package com.javahelps.com.javahelps.externaldatabasedemo;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,25 +66,24 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
         TextView tvName=(TextView) convertView.findViewById(R.id.textView2);
         TextView tvZimon=(TextView) convertView.findViewById(R.id.textView1);
         final Button bt=(Button) convertView.findViewById(R.id.button_id);
-
+        final int[] clickcount = {0};
         bt.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View view) {
-                if ( bt.getText()=="יציאה")
+                clickcount[0] = clickcount[0] +1;
+                if (clickcount[0] ==2)
                 {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
                     g.setTest("1");
                     Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
                     mContext.startActivity(macintoshIntent);
+
                 }
                 else {
-                    bt.setBackgroundColor(Color.RED);
-                    bt.setText("יציאה");
+                    bt.setBackgroundResource(R.drawable.exit);
                 }
             }
         });
-
         tvName.setText(name);
         tvZimon.setText(EnterTime);
 

@@ -19,7 +19,7 @@ public class memo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo);
-        Button button = (Button)findViewById(R.id.button4);
+    /*    Button button = (Button)findViewById(R.id.button4);
         Button button2 = (Button)findViewById(R.id.button5);
         Button button3 = (Button)findViewById(R.id.button6);
         Button button4 = (Button)findViewById(R.id.button3);
@@ -29,12 +29,12 @@ public class memo extends AppCompatActivity {
         button.setClickable(false);
         button2.setClickable(false);
         button3.setClickable(false);
-        button4.setClickable(false);
+        button4.setClickable(false); */
         List<Patient> PatientsMemo;
         AdapterMemoPatient adapter;
         ListView mListView;
         mListView = (ListView) findViewById(R.id.listView);
-        Button ultra = (Button) findViewById(R.id.button7);
+     /*   Button ultra = (Button) findViewById(R.id.button7);
         ultra.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -42,7 +42,7 @@ public class memo extends AppCompatActivity {
                 startActivity(macintoshIntent);
             }
         });
-
+*/
 
 
         ImageButton fab = findViewById(R.id.fab);

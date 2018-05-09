@@ -9,72 +9,64 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#f7dbec">
+    android:background="@drawable/next">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="מה השלב הבא?"
-        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/memob"
         style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="ממוגרפיה"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/memonext"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/ultrab"
         style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="אולטרסאונד"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/ultranext"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/resultsb"
         style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="תוצאות"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/resultsnext"
         android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/unknownb"
         style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="לא ידוע"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/unknown"
         android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/transferb"
         style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="העבר"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/transfer"
         android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/finishb"
         style="?android:textAppearanceSmall"
-        android:background="@drawable/recbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="סיום"
+        android:background="@drawable/finish"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
         android:textStyle="bold" />
 
 
