@@ -81,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         final List<String> Passwords = databaseAccess.getPasswords();
         final List<String> issecretary = databaseAccess.getissecretary();
         final List<String> istech = databaseAccess.getistech();
+        final List<String> ismanager = databaseAccess.getismanager();
         databaseAccess.close();
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -90,6 +91,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (UserNames.contains(EnteredUserName)) {
                     if (Passwords.indexOf(EnteredPass)==UserNames.indexOf(EnteredUserName)){
                         if (istech.get(UserNames.indexOf(EnteredUserName)).equals("1")) {
+                            if (ismanager.get(UserNames.indexOf(EnteredUserName)).equals("1"))
+                            {
+                                Globals g = Globals.getInstance();
+                                g.setIsManager("1");
+                            }
                             String empName=databaseAccess.getTechDetails(EnteredUserName);
                             Intent macintoshIntent = new Intent(LoginActivity.this, TechMainActivity.class);
                             startActivity(macintoshIntent);

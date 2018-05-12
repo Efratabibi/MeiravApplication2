@@ -1,5 +1,6 @@
 package com.javahelps.com.javahelps.externaldatabasedemo;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 public class TechMainActivity extends AppCompatActivity {
     private TextView textView2;
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,16 @@ public class TechMainActivity extends AppCompatActivity {
         this.textView2=(TextView) findViewById(R.id.textView1);
         Globals g = Globals.getInstance();
         textView2.setText(g.getTechName()+", ברוכה הבאה! ");
+
+        Button rep = (Button) findViewById(R.id.rep);
+        rep.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View view) {
+                Intent macintoshIntent5 = new Intent(TechMainActivity.this, Report.class);
+                startActivity(macintoshIntent5);
+            }
+        });
+
         Button buttonwaiting = (Button) findViewById(R.id.b3);
         buttonwaiting.setOnClickListener(new OnClickListener() {
 
@@ -58,7 +70,6 @@ public class TechMainActivity extends AppCompatActivity {
                 startActivity(macintoshIntent2);
             }
         });
-
        /* Start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent loginintent = new Intent(TechMainActivity.this, LoginActivity.class);

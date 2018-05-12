@@ -12,12 +12,12 @@ import java.util.Calendar;
 
 public class WhatsNext extends AppCompatActivity {
     UpdateQueue MyQueue;
+    final DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whats_next);
-
         MyQueue = new UpdateQueue(this);
 
         Button insertmemo = (Button) findViewById(R.id.memob);
@@ -29,14 +29,17 @@ public class WhatsNext extends AppCompatActivity {
 
         Globals g = Globals.getInstance();
         final String id=g.getPatientId();
-
+        final String test=g.getTest();
+        Toast.makeText(WhatsNext.this, g.getTest(), Toast.LENGTH_LONG).show();
         insertmemo.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
+                Globals g = Globals.getInstance();
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("HH:mm");
                 String formattedDate = df.format(c.getTime());
+                boolean updateLeaveTime = MyQueue.updateLeaveTime(id,test,formattedDate.toString());
+                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
                 boolean IsInsert = MyQueue.insertData(id, formattedDate.toString(), "", "1", "1");
                 Intent macintoshIntent = new Intent(WhatsNext.this, memo.class);
                 startActivity(macintoshIntent);
@@ -47,10 +50,12 @@ public class WhatsNext extends AppCompatActivity {
         insertultra.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
+                Globals g = Globals.getInstance();
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("HH:mm");
                 String formattedDate = df.format(c.getTime());
+                boolean updateLeaveTime = MyQueue.updateLeaveTime(id,test,formattedDate.toString());
+                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
                 boolean IsInsert = MyQueue.insertData(id, formattedDate.toString(), "", "2", "1");
                 Intent macintoshIntent = new Intent(WhatsNext.this, ultra.class);
                 startActivity(macintoshIntent);
@@ -61,10 +66,12 @@ public class WhatsNext extends AppCompatActivity {
         insertresults.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
+                Globals g = Globals.getInstance();
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("HH:mm");
                 String formattedDate = df.format(c.getTime());
+                boolean updateLeaveTime = MyQueue.updateLeaveTime(id,test,formattedDate.toString());
+                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
                 boolean IsInsert = MyQueue.insertData(id, formattedDate.toString(), "", "3", "1");
                 Intent macintoshIntent = new Intent(WhatsNext.this, results.class);
                 startActivity(macintoshIntent);
@@ -76,10 +83,12 @@ public class WhatsNext extends AppCompatActivity {
         insertresults.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
+                Globals g = Globals.getInstance();
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("HH:mm");
                 String formattedDate = df.format(c.getTime());
+                boolean updateLeaveTime = MyQueue.updateLeaveTime(id,test,formattedDate.toString());
+                boolean IsUpdated = MyQueue.updateIsActive(id,"0");
                 boolean IsInsert = MyQueue.insertData(id, formattedDate.toString(), "", "3", "1");
                 Intent macintoshIntent = new Intent(WhatsNext.this, results.class);
                 startActivity(macintoshIntent);
@@ -99,6 +108,11 @@ public class WhatsNext extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
+                Globals g = Globals.getInstance();
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+                String formattedDate = df.format(c.getTime());
+                boolean updateLeaveTime = MyQueue.updateLeaveTime(id,test,formattedDate.toString());
                 boolean IsUpdated = MyQueue.updateIsActive(id,"0");
                 finish();
                 /* boolean IsInsert = MyQueue.insertData(IDToRemove, formattedDate.toString(), "", "1", "1"); */

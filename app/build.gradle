@@ -30,7 +30,7 @@ dependencies {
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     //implementation 'com.jjoe64:graphview:4.0.1'
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.1.6'
 
 
 

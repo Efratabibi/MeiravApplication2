@@ -10,11 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 public class memo extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,20 +40,22 @@ public class memo extends AppCompatActivity {
         ultra.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                Intent macintoshIntent = new Intent(memo.this, ultra.class);
-                startActivity(macintoshIntent);
-            }
+                Intent macintoshIntent = ne
+
+    w Intent(memo.this, ultra.class);
+    startActivity(macintoshIntent);
+}
         });
-*/
+                */
 
-
-        ImageButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent macintoshIntent2 = new Intent(memo.this, TechMainActivity.class);
-                startActivity(macintoshIntent2);
-            }
+                ImageButton fab = findViewById(R.id.fab);
+                fab.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+        Globals g = Globals.getInstance();
+        Intent macintoshIntent2 = new Intent(memo.this, TechMainActivity.class);
+        startActivity(macintoshIntent2);
+        }
         });
 
         DatabaseAccess db = new DatabaseAccess(this);
@@ -59,5 +63,8 @@ public class memo extends AppCompatActivity {
         adapter = new AdapterMemoPatient(this, R.layout.adapter_tech_layout, PatientsMemo);
         mListView.setAdapter(adapter);
 
-    }
-}
+        }
+
+
+
+        }

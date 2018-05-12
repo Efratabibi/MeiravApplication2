@@ -32,6 +32,12 @@ public class UpdateQueue extends SQLiteOpenHelper {
         super((Context) context, DATABASE_NAME, null, 1);
     }
 
+    public UpdateQueue(memo context) {
+        super((Context) context, DATABASE_NAME, null, 1);
+    }
+
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME +" (ID STRING PRIMARY KEY AUTOINCREMENT,ENTERTIME TEXT, LEAVETIME TEXT, TEST TEXT, ISACTIVE TEXT)");
@@ -73,16 +79,25 @@ public class UpdateQueue extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean updateLeaveTime(String id, String LeaveTime) {
+    public boolean updateLeaveTime(String id,String test, String LeaveTime) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_4, LeaveTime);
+        //db.update(TABLE_NAME,contentValues,"ID="+id,null);
+        db.update(TABLE_NAME, contentValues, "ID = ? and Test = ? and IsActive='1'", new String[]{id,test});
+        return true;
+    }
+
+    public boolean updateTest(String id, String Test) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_5, Test);
         //db.update(TABLE_NAME,contentValues,"ID="+id,null);
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
         return true;
     }
 
-    public boolean updateTest(String id, String Test) {
+    public boolean updateTestTime(String id, String Test) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_5, Test);

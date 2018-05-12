@@ -79,10 +79,6 @@ public class SecMainActivity extends AppCompatActivity {
                         boolean isUpdate = MyDB.updateData(IDToRemove, formattedDate.toString());
                         if (isUpdate == true) {
                             boolean isInsert = MyQueue.insertData(IDToRemove, formattedDate.toString(), "null", "1", "1");
-                            if (isInsert == true)
-                                Toast.makeText(SecMainActivity.this, "GDfdsata Update", Toast.LENGTH_LONG).show();
-                            else
-                                Toast.makeText(SecMainActivity.this, "NONONONO", Toast.LENGTH_LONG).show();
                         }
 
                         // Toast.makeText(SecMainActivity.this, "GData Update", Toast.LENGTH_LONG).show();
@@ -102,7 +98,7 @@ public class SecMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent macintoshIntent = new Intent(SecMainActivity.this, Report.class);
+                Intent macintoshIntent = new Intent(SecMainActivity.this, AddPatient.class);
                 startActivity(macintoshIntent);
                 finish();
             }
@@ -120,10 +116,6 @@ public class SecMainActivity extends AppCompatActivity {
                         String IDToRemove = p.getId();
                         // String idtoremove="201946287";
                         Integer isDeleted = MyDB.deleteData(IDToRemove);
-                        if (isDeleted == -1)
-                            Toast.makeText(SecMainActivity.this, "NONONONO", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(SecMainActivity.this, "GDfdsata Update", Toast.LENGTH_LONG).show();
                         initList();
                     }
                 }

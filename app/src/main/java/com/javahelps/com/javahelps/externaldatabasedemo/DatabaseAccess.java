@@ -7,7 +7,6 @@ package com.javahelps.com.javahelps.externaldatabasedemo;
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
         import android.database.sqlite.SQLiteOpenHelper;
-        import android.widget.Toast;
 
         import java.util.ArrayList;
         import java.util.List;
@@ -228,7 +227,7 @@ public class DatabaseAccess {
             do {
                 Patient patient = new Patient();
                 patient.setId(cursor.getString(0));
-                patient.setFirstName(cursor.getString(6)+' '+cursor.getString(7));
+                patient.setFirstName(cursor.getString(7)+' '+cursor.getString(8));
                 patient.setEnterTime(cursor.getString(1));
                 patient.setTest(cursor.getString(3));
                 patient.setIsActive(cursor.getString(4));
@@ -253,7 +252,7 @@ public class DatabaseAccess {
             do {
                 Patient patient = new Patient();
                 patient.setId(cursor.getString(0));
-                patient.setFirstName(cursor.getString(6)+' '+cursor.getString(7));
+                patient.setFirstName(cursor.getString(7)+' '+cursor.getString(8));
                 patient.setEnterTime(cursor.getString(1));
                 patient.setTest(cursor.getString(3));
                 patient.setIsActive(cursor.getString(4));
@@ -292,4 +291,24 @@ public class DatabaseAccess {
 
 
     }
+
+    public Integer getDataForReports(String test, String tech) {
+        String countQuery = "SELECT * FROM 'Queue' q join 'Meirav_table' m on q.ID=m.ID WHERE q.IsActive='1' and Tech='"+tech+"' and q.Test='"+test+"'";
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public float GetDataToReport2(String test) {
+        String countQuery="SELECT AVG(cast((strftime ('%s',\"LeaveTime\")-strftime('%s',\"EnterTime\")) AS real)/60) from 'Queue' where IsActive='0' and Test='"+test+"'";
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        Cursor cursor2 = db.rawQuery(countQuery, null);
+        if(cursor2.moveToFirst()) {
+            return cursor2.getFloat(0);
+        }
+        return cursor2.getFloat(0);
+    }
+
 }

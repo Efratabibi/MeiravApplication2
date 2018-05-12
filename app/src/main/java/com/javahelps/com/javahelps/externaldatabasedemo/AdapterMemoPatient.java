@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,9 @@ import android.widget.Toast;
 import com.javahelps.com.javahelps.externaldatabasedemo.Patient;
 import com.javahelps.com.javahelps.externaldatabasedemo.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -34,7 +37,6 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
     private int mResource;
     private Button bt;
 
-
     /**
      * Default constructor for the PersonListAdapter
      * @param context
@@ -48,7 +50,6 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
     }
 
     @NonNull
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
         String name = getItem(position).getFirstName();
@@ -56,7 +57,6 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
         final String id = getItem(position).getId();
         String EnterTime = getItem(position).getEnterTime();
         final String test = "1";
-
         //Create the person object with the information
         Patient person = new Patient(id,name,zimontime,EnterTime,test);
 
@@ -81,6 +81,12 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
                 }
                 else {
                     bt.setBackgroundResource(R.drawable.exit);
+                    Globals g = Globals.getInstance();
+                    g.setPatientId(id);
+                    Calendar c = Calendar.getInstance();
+                    SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+                    String formattedDate = df.format(c.getTime());
+
                 }
             }
         });

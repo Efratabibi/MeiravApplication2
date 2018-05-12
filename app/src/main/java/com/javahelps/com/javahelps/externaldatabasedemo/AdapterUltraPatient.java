@@ -16,7 +16,9 @@ import android.widget.TextView;
 import com.javahelps.com.javahelps.externaldatabasedemo.Patient;
 import com.javahelps.com.javahelps.externaldatabasedemo.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -29,6 +31,7 @@ public class AdapterUltraPatient extends ArrayAdapter<Patient> {
 
     private Context mContext;
     private int mResource;
+    UpdateQueue MyQueue;
 
 
     /**
@@ -51,7 +54,7 @@ public class AdapterUltraPatient extends ArrayAdapter<Patient> {
         String zimontime = getItem(position).getZimonTime();
         final String id = getItem(position).getId();
         String EnterTime = getItem(position).getEnterTime();
-        String test = "3";
+        String test = "2";
 
         //Create the person object with the information
         Patient person = new Patient(id,name,zimontime,EnterTime,test);
@@ -74,21 +77,26 @@ public class AdapterUltraPatient extends ArrayAdapter<Patient> {
         } */
 
         final Button bt=(Button) convertView.findViewById(R.id.button_id);
-
+        final int[] clickcount = {0};
         bt.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View view) {
-                if ( bt.getText()=="יציאה")
+                clickcount[0] = clickcount[0] +1;
+                if (clickcount[0] ==2)
                 {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
-                    g.setTest("3");
+                    g.setTest("2");
                     Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
                     mContext.startActivity(macintoshIntent);
+
                 }
                 else {
-                    bt.setBackgroundColor(Color.RED);
-                    bt.setText("יציאה");
+                    bt.setBackgroundResource(R.drawable.exit);
+                    Globals g = Globals.getInstance();
+                    g.setPatientId(id);
+                    Calendar c = Calendar.getInstance();
+                    SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+                    String formattedDate = df.format(c.getTime());
                 }
             }
         });

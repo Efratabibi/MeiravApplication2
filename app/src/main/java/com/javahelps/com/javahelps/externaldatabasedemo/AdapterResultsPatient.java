@@ -16,7 +16,9 @@ import android.widget.TextView;
 import com.javahelps.com.javahelps.externaldatabasedemo.Patient;
 import com.javahelps.com.javahelps.externaldatabasedemo.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -29,7 +31,7 @@ public class AdapterResultsPatient extends ArrayAdapter<Patient> {
 
     private Context mContext;
     private int mResource;
-
+    UpdateQueue MyQueue;
 
     /**
      * Default constructor for the PersonListAdapter
@@ -63,11 +65,11 @@ public class AdapterResultsPatient extends ArrayAdapter<Patient> {
         TextView tvZimon=(TextView) convertView.findViewById(R.id.textView1);
         final Button bt=(Button) convertView.findViewById(R.id.button_id);
         bt.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View view) {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
-                    g.setTest("2");
+                    g.setTest("3");
+                    Calendar c = Calendar.getInstance();
                     Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
                     mContext.startActivity(macintoshIntent);
             }
