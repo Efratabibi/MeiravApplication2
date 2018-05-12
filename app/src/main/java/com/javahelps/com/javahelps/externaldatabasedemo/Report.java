@@ -47,18 +47,18 @@ public class Report extends AppCompatActivity {
 
         bargroup1.add(new BarEntry(databaseAccess.getDataForReports("1","2"), 0));
         bargroup1.add(new BarEntry(databaseAccess.getDataForReports("1","5"), 1));
-        bargroup1.add(new BarEntry(databaseAccess.getDataForReports("1","3"), 2));
+        bargroup1.add(new BarEntry(databaseAccess.getDataForReports("1","4"), 2));
 
 // create BarEntry for Bar Group 1
         ArrayList<BarEntry> bargroup2 = new ArrayList<>();
         bargroup2.add(new BarEntry(databaseAccess.getDataForReports("2","2"), 0));
         bargroup2.add(new BarEntry(databaseAccess.getDataForReports("2","5"), 1));
-        bargroup2.add(new BarEntry(databaseAccess.getDataForReports("2","3"), 2));
+        bargroup2.add(new BarEntry(databaseAccess.getDataForReports("2","4"), 2));
 
         ArrayList<BarEntry> bargroup3 = new ArrayList<>();
         bargroup3.add(new BarEntry(databaseAccess.getDataForReports("3","2"), 0));
         bargroup3.add(new BarEntry(databaseAccess.getDataForReports("3","5"), 1));
-        bargroup3.add(new BarEntry(databaseAccess.getDataForReports("3","3"), 2));
+        bargroup3.add(new BarEntry(databaseAccess.getDataForReports("3","4"), 2));
 
 // creating dataset for Bar Group1
         BarDataSet barDataSet1 = new BarDataSet(bargroup1, "ממוגרפיה");
@@ -87,7 +87,11 @@ public class Report extends AppCompatActivity {
 
 // initialize the Bardata with argument labels and dataSet
         BarData data = new BarData(labels, dataSets);
+        barChart.setBorderColor(Color.RED);
+        barChart.setBorderWidth(1f);
         barChart.setData(data);
+        barChart.setGridBackgroundColor(Color.argb((214),214,204,220));
+        barChart.setBorderColor(Color.BLACK);
 
 
         //    YAxis leftAxis = barChart.getAxisLeft();
@@ -123,9 +127,11 @@ barChart2=(HorizontalBarChart) findViewById(R.id.barchart2);
         BarDataSet set1;
         set1=new BarDataSet(HorizontalBarChartGroup,"זמן המתנה ממוצע");
         set1.setValueTextSize(10);
+        set1.setBarSpacePercent(1f);
         BarData data2 = new BarData(labels2, set1);
         barChart2.setData(data2);
-
+        barChart2.setGridBackgroundColor(Color.argb((214),214,204,220));
+        barChart2.setBorderColor(Color.BLACK);
 
   /*   barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);
