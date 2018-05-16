@@ -16,7 +16,6 @@
     <!-- Login progress -->
     <ProgressBar
         android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -43,11 +42,12 @@
                     android:layout_width="45mm"
                     android:layout_height="8mm"
                     android:layout_gravity="center"
+                    android:background="@drawable/userandpass"
+                    android:gravity="center"
                     android:hint="@string/prompt_UserName"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true"
-                    android:background="@drawable/userandpass"/>
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -67,7 +67,9 @@
                     android:maxLines="1"
                     android:layout_gravity="center"
                     android:singleLine="true"
-                    android:background="@drawable/userandpass"/>
+                    android:background="@drawable/userandpass"
+                    android:gravity="center"
+                    />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -78,8 +80,11 @@
                 android:layout_height="8mm"
                 android:layout_gravity="center"
                 android:layout_marginTop="26dp"
-                android:background="@drawable/signin"
-                android:textStyle="bold" />
+                android:background="@drawable/emptybut"
+                android:text="התחבר/י"
+                android:fontFamily="@font/myfont"
+                android:textColor="#FFFFFFFF"
+                android:textSize="25dp" />
 
         </LinearLayout>
     </ScrollView>

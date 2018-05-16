@@ -18,8 +18,11 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="140dp"
-        android:background="@drawable/memonext"
-        android:textStyle="bold" />
+        android:background="@drawable/emptybut"
+        android:text="ממוגרפיה"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp"/>
 
     <Button
         android:id="@+id/ultrab"
@@ -27,8 +30,11 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
-        android:background="@drawable/ultranext"
-        android:textStyle="bold" />
+        android:background="@drawable/emptybut"
+        android:text="אולטרסאונד"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/resultsb"
@@ -36,8 +42,11 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
-        android:background="@drawable/resultsnext"
-        android:textStyle="bold" />
+        android:background="@drawable/emptybut"
+        android:text="תוצאות"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
 
     <Button
@@ -46,8 +55,11 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
-        android:background="@drawable/unknown"
-        android:textStyle="bold" />
+        android:background="@drawable/emptybut"
+        android:text="לא ידוע"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
 
     <Button
@@ -56,18 +68,24 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
-        android:background="@drawable/transfer"
-        android:textStyle="bold" />
+        android:background="@drawable/emptybut"
+        android:text="העבר לטכנאי אחר"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
 
     <Button
         android:id="@+id/finishb"
         style="?android:textAppearanceSmall"
-        android:background="@drawable/finish"
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
-        android:textStyle="bold" />
+        android:background="@drawable/emptybut"
+        android:text="סיום הביקור"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
 
 </LinearLayout>

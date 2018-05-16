@@ -24,7 +24,11 @@
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="200dp"
-        android:background="@drawable/memo" />
+        android:background="@drawable/emptybut"
+        android:text="ממוגרפיה"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/ultra"
@@ -33,7 +37,11 @@
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/ultranext" />
+        android:background="@drawable/emptybut"
+        android:text="אולטרסאונד"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/results"
@@ -42,7 +50,11 @@
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/results" />
+        android:background="@drawable/emptybut"
+        android:text="תוצאות"
+        android:fontFamily="@font/myfont"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp" />
 
 
 
