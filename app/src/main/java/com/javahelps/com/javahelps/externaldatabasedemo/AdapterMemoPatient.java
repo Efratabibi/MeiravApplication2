@@ -1,6 +1,8 @@
 package com.javahelps.com.javahelps.externaldatabasedemo;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -74,9 +76,27 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
                 {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
-                    g.setTest("1");
-                    WhatsNext fe= new WhatsNext();
-                    fe.dialogevent();
+
+
+
+                AlertDialog.Builder alertbox = new AlertDialog.Builder(view.getRootView().getContext());
+                    alertbox.setMessage("האם יש צורך בבדיקה חוזרת?").setCancelable(false).setPositiveButton("כן", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+
+
+                        }
+                    })
+                            .setNegativeButton("לא", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+
+
+                    alertbox.show();
 
 
                 /*    Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
