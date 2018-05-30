@@ -17,7 +17,7 @@ public class WhatsNext extends AppCompatActivity {
     public void dialogevent(){
 
                 android.app.AlertDialog.Builder altdial = new android.app.AlertDialog.Builder(WhatsNext.this);
-                altdial.setMessage("האם יש צורך בבדיקה חוזרת?").setCancelable(false)
+                altdial.setMessage("יש צורך בבדיקה חוזרת?").setCancelable(false)
                         .setPositiveButton("כן", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
