@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/alllogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +11,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.javahelps.com.javahelps.externaldatabasedemo.LoginActivity"
-    android:background="@drawable/login"
-    >
+    android:background="@drawable/backlogin">
+
+
 
     <!-- Login progress -->
     <ProgressBar
@@ -31,11 +33,30 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/header_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:layout_gravity="right"
+                android:text="                 שם משתמש"
+                android:textColor="#7d0e82"
+                android:textSize="20dp"
+                />
 
             <android.support.design.widget.TextInputLayout
+
+
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/HintText"
+                app:hintEnabled="false"
+
+                >
 
                 <EditText
                     android:id="@+id/txtUserName"
@@ -44,22 +65,39 @@
                     android:layout_gravity="center"
                     android:background="@drawable/userandpass"
                     android:gravity="center"
-                    android:hint="@string/prompt_UserName"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textSize="20dp"
+                    android:textColorHint="#000000"
+                    />
 
             </android.support.design.widget.TextInputLayout>
 
+            <TextView
+                android:id="@+id/header_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:layout_gravity="right"
+                android:text="                 סיסמא"
+                android:textColor="#7d0e82"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/HintText"
+                app:hintEnabled="false"
+
+                >
 
                 <EditText
                     android:id="@+id/txtPassword"
                     android:layout_width="45mm"
                     android:layout_height="8mm"
-                    android:hint="@string/prompt_password"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -69,6 +107,10 @@
                     android:singleLine="true"
                     android:background="@drawable/userandpass"
                     android:gravity="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20dp"
+
+
                     />
 
             </android.support.design.widget.TextInputLayout>
@@ -80,10 +122,11 @@
                 android:layout_height="8mm"
                 android:layout_gravity="center"
                 android:layout_marginTop="26dp"
-                android:background="@drawable/emptybut"
+                android:background="@drawable/emptybutnew"
                 android:text="התחבר/י"
                 android:fontFamily="@font/myfont"
                 android:textColor="#FFFFFFFF"
+                android:textStyle="bold"
                 android:textSize="25dp" />
 
         </LinearLayout>

@@ -75,8 +75,12 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
                     g.setTest("1");
-                    Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
-                    mContext.startActivity(macintoshIntent);
+                    WhatsNext fe= new WhatsNext();
+                    fe.dialogevent();
+
+
+                /*    Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
+                    mContext.startActivity(macintoshIntent); */
 
                 }
                 else {

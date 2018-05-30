@@ -5,26 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Report"
-    android:background="#b283ce">
+    android:background="@drawable/backgeneral">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="דוחות"
+            android:fontFamily="@font/myfont"
+            android:textSize="35sp"/>
+    </RelativeLayout>
+    <ImageButton style="@style/AppThemePlus"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/backbutton"
+        android:id="@+id/fab"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15dp" />
+    />
+
+    <RelativeLayout
+        android:id="@+id/header1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="right">
+        <TextView
+            android:id="@+id/header_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="מספר ממתינות בתור"
+            android:fontFamily="@font/myfont"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
-<com.github.mikephil.charting.charts.BarChart
-    android:layout_width="match_parent"
-    android:layout_height="350sp"
-    android:id="@+id/barchart"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="20dp">
-</com.github.mikephil.charting.charts.BarChart>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="240sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="100dp"></com.github.mikephil.charting.charts.BarChart>
+
+
+        <RelativeLayout
+            android:id="@+id/header2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/header_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:text="זמן המתנה ממוצע בתור (דקות)"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
 
         <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/barchart2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/barchart2"
             android:layout_marginTop="10dp"
+
             ></com.github.mikephil.charting.charts.HorizontalBarChart>
     </LinearLayout>
 
 </RelativeLayout>
+

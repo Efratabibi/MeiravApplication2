@@ -11,6 +11,7 @@ import java.text.DateFormat;
 import android.view.View.OnClickListener;
 
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import android.content.Intent;
@@ -44,7 +45,7 @@ public class TechMainActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonwaiting = (Button) findViewById(R.id.b3);
+        Button buttonwaiting = (Button) findViewById(R.id.b1);
         buttonwaiting.setOnClickListener(new OnClickListener() {
 
             public void onClick(View view) {
@@ -61,13 +62,12 @@ public class TechMainActivity extends AppCompatActivity {
                 startActivity(macintoshIntent2);
             }
         });
-
-        Button navi = (Button) findViewById(R.id.b3);
+        final LinearLayout lin=(LinearLayout) findViewById(R.id.lin);
+        final Button navi = (Button) findViewById(R.id.b3);
         navi.setOnClickListener(new OnClickListener() {
 
             public void onClick(View view) {
-                Intent macintoshIntent2 = new Intent(TechMainActivity.this, navitech.class);
-                startActivity(macintoshIntent2);
+                lin.setLayoutParams(new LinearLayout.LayoutParams(1500, 180));
             }
         });
        /* Start.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +83,35 @@ public class TechMainActivity extends AppCompatActivity {
 
             public void onClick(View view) {
                 Intent macintoshIntent3 = new Intent(TechMainActivity.this, LoginActivity.class);
+                startActivity(macintoshIntent3);
+            }
+        });
+
+
+        Button memo = (Button) findViewById(R.id.memo);
+        memo.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent macintoshIntent1 = new Intent(TechMainActivity.this, memo.class);
+                startActivity(macintoshIntent1);
+            }
+        });
+
+
+        Button ultra = (Button) findViewById(R.id.ultra);
+        ultra.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent macintoshIntent2 = new Intent(TechMainActivity.this, ultra.class);
+                startActivity(macintoshIntent2);
+            }
+        });
+
+        Button results = (Button) findViewById(R.id.results);
+        results.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent macintoshIntent3 = new Intent(TechMainActivity.this, results.class);
                 startActivity(macintoshIntent3);
             }
         });

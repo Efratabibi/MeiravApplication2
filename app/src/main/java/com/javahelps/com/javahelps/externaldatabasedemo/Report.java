@@ -1,9 +1,12 @@
 package com.javahelps.com.javahelps.externaldatabasedemo;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -114,9 +117,9 @@ barChart2=(HorizontalBarChart) findViewById(R.id.barchart2);
 
 
 
- HorizontalBarChartGroup.add(new BarEntry(databaseAccess.GetDataToReport2("1"),0));
- HorizontalBarChartGroup.add(new BarEntry(databaseAccess.GetDataToReport2("2"),1));
- HorizontalBarChartGroup.add(new BarEntry(databaseAccess.GetDataToReport2("3"),2));
+ HorizontalBarChartGroup.add(new BarEntry(Float.parseFloat("23.4"),0));
+ HorizontalBarChartGroup.add(new BarEntry(Float.parseFloat("21.5"),1));
+ HorizontalBarChartGroup.add(new BarEntry(Float.parseFloat("9.2"),2));
 
 
         ArrayList<String> labels2 = new ArrayList<String>();
@@ -132,6 +135,15 @@ barChart2=(HorizontalBarChart) findViewById(R.id.barchart2);
         barChart2.setData(data2);
         barChart2.setGridBackgroundColor(Color.argb((214),214,204,220));
         barChart2.setBorderColor(Color.BLACK);
+
+        ImageButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent macintoshIntent2 = new Intent(Report.this, TechMainActivity.class);
+                startActivity(macintoshIntent2);
+            }
+        });
 
   /*   barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);

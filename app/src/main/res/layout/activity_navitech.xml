@@ -11,11 +11,13 @@
         android:id="@+id/back"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_gravity="left"
+        android:layout_gravity="right"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="13dp"
-        android:background="@drawable/backbutton" />
+        android:background="@drawable/backbutton"
+        android:rotation="180" />
+
 
     <Button
         android:id="@+id/memo"
@@ -59,4 +61,5 @@
 
 
 </LinearLayout>
+
 
