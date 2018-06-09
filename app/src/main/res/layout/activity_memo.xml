@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/backgeneral"
+    android:background="@drawable/newback"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,18 +18,25 @@
             android:id="@+id/header_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:text="ממוגרפיה"
+            android:textColor="#7d0e82"
+            android:text="     ממתינות לממוגרפיה"
+            android:textStyle="bold"
             android:fontFamily="@font/myfont"
             android:textSize="35sp"/>
     </RelativeLayout>
-    <ImageButton style="@style/AppThemePlus"
+
+    <ImageButton
+        android:id="@+id/fab"
+        style="@style/AppThemePlus"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:background="@drawable/backbutton"
-        android:id="@+id/fab"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:layout_gravity="end|bottom"
-        android:layout_margin="15dp" />
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/backbutton"
+        android:rotation="180" />
         />
 
     <ScrollView
@@ -50,6 +57,7 @@
             android:layout_centerHorizontal="true"
             android:fillViewport="true"
             android:orientation="vertical"
+
             >
 
             <LinearLayout
@@ -63,7 +71,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="20"
+                    android:layout_weight="18"
                     android:orientation="vertical">
 
                     <TextView
@@ -77,21 +85,22 @@
 
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="13"
-                   >
+                    android:layout_weight="15"
+                    >
 
                     <TextView
                         android:id="@+id/textView1"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="60dp"
                         android:gravity="center"
                         android:layout_gravity="center"
-                        android:text="שעת כניסה לתור"
+                        android:text="כניסה לתור"
                         android:textAlignment="center"
-                        android:textColor="#ffffffff"
-                        android:textSize="20dp"
+                        android:textColor="#7d0e82"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
                         android:fontFamily="@font/myfont"/>
 
 
@@ -99,7 +108,7 @@
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="17"
                     android:orientation="vertical">
@@ -109,11 +118,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:gravity="center"
-                        android:text="שם מלא"
+                        android:text="שם"
+                        android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textColor="#ffffffff"
+                        android:textColor="#7d0e82"
                         android:fontFamily="@font/myfont"
-                        android:textSize="20dp" />
+                        android:textSize="18dp" />
 
 
                 </LinearLayout>

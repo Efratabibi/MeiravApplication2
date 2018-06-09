@@ -18,7 +18,8 @@
             android:id="@+id/button_id"
             android:layout_width="30dp"
             android:layout_height="50dp"
-            android:background="@drawable/enter"
+            android:background="@drawable/enternewww"
+            android:layout_marginLeft="-50dp"
             android:gravity="center"
             android:onClick="dialogevent"/>
 
@@ -38,7 +39,8 @@
             android:layout_weight="50"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#7d0e82"
+            android:textStyle="bold"
             android:textSize="15dp"
             android:fontFamily="@font/myfont"/>
 
@@ -50,15 +52,16 @@
         android:layout_weight="50"
         android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_weight="50"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        android:fontFamily="@font/myfont"/>
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="50"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#7d0e82"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:fontFamily="@font/myfont"/>
+    </LinearLayout>
 </LinearLayout>

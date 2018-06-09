@@ -22,19 +22,40 @@ import android.widget.Toast;
 
 public class TechMainActivity extends AppCompatActivity {
     private TextView textView2;
+    private TextView textView;
 
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tech_main);
+
         Calendar c = Calendar.getInstance();
         System.out.println("זמן נוכחי => "+c.getTime());
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd\nHH:mm");
         String formattedDate = df.format(c.getTime());
         this.textView2=(TextView) findViewById(R.id.textView1);
-        Globals g = Globals.getInstance();
+        this.textView=(TextView) findViewById(R.id.textView2);
+        textView.setText(formattedDate);
+
+        final Globals g = Globals.getInstance();
         textView2.setText(g.getTechName()+", ברוכה הבאה! ");
+        final LinearLayout lin=(LinearLayout) findViewById(R.id.lin);
+
+        if (g.getCounter()%2==0) {
+            if (g.getCounter()==1)
+            {
+                lin.setLayoutParams(new LinearLayout.LayoutParams(1500, 180));
+            }
+            else {
+                lin.setLayoutParams(new LinearLayout.LayoutParams(0, 0));
+            }
+        }
+        else
+        {
+            lin.setLayoutParams(new LinearLayout.LayoutParams(1500, 180));
+        }
+
 
         Button rep = (Button) findViewById(R.id.rep);
         rep.setOnClickListener(new OnClickListener() {
@@ -49,7 +70,7 @@ public class TechMainActivity extends AppCompatActivity {
         buttonwaiting.setOnClickListener(new OnClickListener() {
 
             public void onClick(View view) {
-                Intent macintoshIntent = new Intent(TechMainActivity.this, memo.class);
+                Intent macintoshIntent = new Intent(TechMainActivity.this, history.class);
                 startActivity(macintoshIntent);
             }
         });
@@ -62,12 +83,23 @@ public class TechMainActivity extends AppCompatActivity {
                 startActivity(macintoshIntent2);
             }
         });
-        final LinearLayout lin=(LinearLayout) findViewById(R.id.lin);
         final Button navi = (Button) findViewById(R.id.b3);
         navi.setOnClickListener(new OnClickListener() {
-
             public void onClick(View view) {
-                lin.setLayoutParams(new LinearLayout.LayoutParams(1500, 180));
+                g.setCounter(g.getCounter()+1);
+                if (g.getCounter()%2==0) {
+                    if (g.getCounter()==1)
+                    {
+                        lin.setLayoutParams(new LinearLayout.LayoutParams(1500, 180));
+                    }
+                    else {
+                        lin.setLayoutParams(new LinearLayout.LayoutParams(0, 0));
+                    }
+                }
+                else
+                {
+                    lin.setLayoutParams(new LinearLayout.LayoutParams(1500, 180));
+                }
             }
         });
        /* Start.setOnClickListener(new View.OnClickListener() {

@@ -40,7 +40,9 @@
             android:name=".navitech"
             android:label="@string/title_activity_navitech"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Report"></activity>
+        <activity android:name=".Report" />
+        <activity android:name=".history" />
+        <activity android:name=".adapterfinish"></activity>
     </application>
 
 </manifest>

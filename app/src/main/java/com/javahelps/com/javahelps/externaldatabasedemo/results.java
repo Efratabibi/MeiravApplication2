@@ -29,6 +29,7 @@ public class results extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent macintoshIntent2 = new Intent(results.this, TechMainActivity.class);
                 startActivity(macintoshIntent2);
             }

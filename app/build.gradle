@@ -33,8 +33,6 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v2.1.6'
 
 
-
-
 }
 
 

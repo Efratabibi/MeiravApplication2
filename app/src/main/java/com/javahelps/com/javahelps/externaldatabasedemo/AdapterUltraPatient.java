@@ -11,6 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.javahelps.com.javahelps.externaldatabasedemo.Patient;
@@ -50,7 +52,7 @@ public class AdapterUltraPatient extends ArrayAdapter<Patient> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
-        String name = getItem(position).getFirstName();
+        final String name = getItem(position).getFirstName();
         String zimontime = getItem(position).getZimonTime();
         final String id = getItem(position).getId();
         String EnterTime = getItem(position).getEnterTime();
@@ -85,13 +87,15 @@ public class AdapterUltraPatient extends ArrayAdapter<Patient> {
                 {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
+                    g.setPatientName(name);
                     g.setTest("2");
                     Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
                     mContext.startActivity(macintoshIntent);
 
                 }
                 else {
-                    bt.setBackgroundResource(R.drawable.exit);
+                    bt.setBackgroundResource(R.drawable.exitnewww);
+                    bt.setX(200);
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
                     Calendar c = Calendar.getInstance();

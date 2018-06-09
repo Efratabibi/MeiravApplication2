@@ -7,8 +7,10 @@ public class Globals {
     private String TechName;
     private String TechId;
     private String PatientId;
+    private String PatientName;
     private String Test;
     private String IsManager;
+    private int Counter;
     // Restrict the constructor from being instantiated
     private Globals(){}
 
@@ -33,6 +35,13 @@ public class Globals {
         return this.PatientId;
     }
 
+    public void setPatientName(String PatientName){
+        this.PatientName=PatientName;
+    }
+    public String getPatientName(){
+        return this.PatientName;
+    }
+
     public void setTest(String Test){
         this.Test=Test;
     }
@@ -45,6 +54,13 @@ public class Globals {
     }
     public String getIsManager(){
         return this.IsManager;
+    }
+
+    public void setCounter(int Counter){
+        this.Counter=Counter;
+    }
+    public int getCounter(){
+        return this.Counter;
     }
 
     public static synchronized Globals getInstance(){

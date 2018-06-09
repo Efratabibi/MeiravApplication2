@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class  MainActivity extends AppCompatActivity {
     private ListView listView;
-    private static int Splash_Time_Out=4000;
+    private static int Splash_Time_Out=1000;
 
 
     @Override

@@ -91,8 +91,11 @@ public class LoginActivity extends AppCompatActivity {
                     if (Passwords.get(UserNames.indexOf(EnteredUserName)).equals(EnteredPass)){
                         if (istech.get(UserNames.indexOf(EnteredUserName)).equals("1")) {
                             String empName=databaseAccess.getTechDetails(EnteredUserName);
+                            Globals g = Globals.getInstance();
+                            g.setCounter(0);
                             Intent macintoshIntent = new Intent(LoginActivity.this, TechMainActivity.class);
                             startActivity(macintoshIntent);
+
                             finish();
                         }
                         else {

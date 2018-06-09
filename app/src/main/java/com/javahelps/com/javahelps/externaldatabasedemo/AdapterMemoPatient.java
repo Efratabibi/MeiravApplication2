@@ -54,7 +54,7 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
     @NonNull
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
-        String name = getItem(position).getFirstName();
+        final String name = getItem(position).getFirstName();
         String zimontime = getItem(position).getZimonTime();
         final String id = getItem(position).getId();
         String EnterTime = getItem(position).getEnterTime();
@@ -76,27 +76,9 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
                 {
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
-
-
-
-                AlertDialog.Builder alertbox = new AlertDialog.Builder(view.getRootView().getContext());
-                    alertbox.setMessage("האם יש צורך בבדיקה חוזרת?").setCancelable(false).setPositiveButton("כן", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-
-
-                        }
-                    })
-                            .setNegativeButton("לא", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.cancel();
-                                }
-                            });
-
-
-                    alertbox.show();
+                    g.setPatientName(name);
+                    Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
+                    mContext.startActivity(macintoshIntent);
 
 
                 /*    Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
@@ -104,7 +86,8 @@ public class AdapterMemoPatient extends ArrayAdapter<Patient>  {
 
                 }
                 else {
-                    bt.setBackgroundResource(R.drawable.exit);
+                    bt.setBackgroundResource(R.drawable.exitnewww);
+                    bt.setX(200);
                     Globals g = Globals.getInstance();
                     g.setPatientId(id);
                     Calendar c = Calendar.getInstance();

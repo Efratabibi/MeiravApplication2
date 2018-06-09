@@ -15,7 +15,7 @@ import android.widget.Toast;
  * Created by ProgrammingKnowledge on 4/3/2015.
  */
 public class UpdateQueue extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "Meirav2.db";
+    public static final String DATABASE_NAME = "Meirav3.db";
     public static final String TABLE_NAME = "Queue";
     public static final String COL_1 = "ID";
     public static final String COL_3 = "EnterTime";

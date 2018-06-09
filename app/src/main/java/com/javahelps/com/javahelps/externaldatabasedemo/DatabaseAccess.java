@@ -311,4 +311,61 @@ public class DatabaseAccess {
         return cursor2.getFloat(0);
     }
 
+
+    public List<Patient> getAllOldMemoPatients() {
+        List<Patient> PatientList = new ArrayList<Patient>();
+// Select All Query
+        Globals g = Globals.getInstance();
+        String selectQuery = "SELECT * FROM 'Queue' q join 'Meirav_table' m on q.ID=m.ID WHERE q.Test='1' and q.IsActive='0' and Tech='"+g.getTechId()+"'";
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+// looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Patient patient = new Patient();
+                patient.setId(cursor.getString(0));
+                patient.setFirstName(cursor.getString(7)+' '+cursor.getString(8));
+                patient.setEnterTime(cursor.getString(1));
+                patient.setTest(cursor.getString(3));
+                patient.setIsActive(cursor.getString(4));
+// Adding contact to list
+                PatientList.add(patient);
+            } while (cursor.moveToNext());
+        }
+
+
+
+// return contact list
+        return PatientList;
+    }
+
+
+
+    public List<Patient> getAllOldUltraPatients() {
+        List<Patient> PatientList = new ArrayList<Patient>();
+// Select All Query
+        Globals g = Globals.getInstance();
+        String selectQuery = "SELECT * FROM 'Queue' q join 'Meirav_table' m on q.ID=m.ID WHERE q.Test='2' and q.IsActive='0' and Tech='"+g.getTechId()+"'";
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+// looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Patient patient = new Patient();
+                patient.setId(cursor.getString(0));
+                patient.setFirstName(cursor.getString(7)+' '+cursor.getString(8));
+                patient.setEnterTime(cursor.getString(1));
+                patient.setTest(cursor.getString(3));
+                patient.setIsActive(cursor.getString(4));
+// Adding contact to list
+                PatientList.add(patient);
+            } while (cursor.moveToNext());
+        }
+// return contact list
+        return PatientList;
+    }
+
+
 }

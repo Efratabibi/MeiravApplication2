@@ -19,7 +19,8 @@
             android:gravity="center"
             android:text="TextView1"
             android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:textColor="#7d0e82"
+            android:textStyle="bold"
             android:textSize="20dp"
             android:fontFamily="@font/myfont"
             />
@@ -42,8 +43,9 @@
             android:gravity="center"
             android:text="TextView2"
             android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:textColor="#7d0e82"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:fontFamily="@font/myfont"/>
 
 

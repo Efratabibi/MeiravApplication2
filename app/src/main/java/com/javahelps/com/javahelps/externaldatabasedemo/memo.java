@@ -52,7 +52,6 @@ public class memo extends AppCompatActivity {
                 fab.setOnClickListener(new View.OnClickListener() {
 @Override
 public void onClick(View view) {
-        Globals g = Globals.getInstance();
         Intent macintoshIntent2 = new Intent(memo.this, TechMainActivity.class);
         startActivity(macintoshIntent2);
         }

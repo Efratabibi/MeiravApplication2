@@ -1,8 +1,12 @@
 package com.javahelps.com.javahelps.externaldatabasedemo;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +15,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.javahelps.com.javahelps.externaldatabasedemo.Patient;
 import com.javahelps.com.javahelps.externaldatabasedemo.R;
@@ -25,13 +31,13 @@ import java.util.List;
  * Created by User on 3/14/2017.
  */
 
-public class AdapterResultsPatient extends ArrayAdapter<Patient> {
+public class adapterfinish extends ArrayAdapter<Patient>  {
 
     private static final String TAG = "PatientListAdapter";
 
     private Context mContext;
     private int mResource;
-    UpdateQueue MyQueue;
+    private Button bt;
 
     /**
      * Default constructor for the PersonListAdapter
@@ -39,22 +45,20 @@ public class AdapterResultsPatient extends ArrayAdapter<Patient> {
      * @param resource
      * @param objects
      */
-    public AdapterResultsPatient(Context context, int resource,List<Patient> objects) {
+    public adapterfinish(Context context, int resource,List<Patient> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
     }
 
     @NonNull
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the persons information
-        final String name = getItem(position).getFirstName();
+        String name = getItem(position).getFirstName();
         String zimontime = getItem(position).getZimonTime();
         final String id = getItem(position).getId();
         String EnterTime = getItem(position).getEnterTime();
-        String test = "2";
-
+        final String test = "1";
         //Create the person object with the information
         Patient person = new Patient(id,name,zimontime,EnterTime,test);
 
@@ -63,21 +67,20 @@ public class AdapterResultsPatient extends ArrayAdapter<Patient> {
 
         TextView tvName=(TextView) convertView.findViewById(R.id.textView2);
         TextView tvZimon=(TextView) convertView.findViewById(R.id.textView1);
-        final Button bt=(Button) convertView.findViewById(R.id.button_id);
-        bt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                    Globals g = Globals.getInstance();
-                    g.setPatientId(id);
-                g.setPatientName(name);
-                    g.setTest("3");
-                    Calendar c = Calendar.getInstance();
-                    Intent macintoshIntent = new Intent(mContext.getApplicationContext(),WhatsNext.class);
-                    mContext.startActivity(macintoshIntent);
-            }
-        });
-
         tvName.setText(name);
         tvZimon.setText(EnterTime);
+
+        /*
+        if ((EnterTime!=null)&&(test.equals('1'))) {
+            tvName.setText(name);
+            tvZimon.setText(EnterTime);
+        }
+        else
+        {
+            tvName.setVisibility(View.INVISIBLE);
+            tvZimon.setVisibility(View.INVISIBLE);
+            bt.setVisibility(View.INVISIBLE);
+        } */
 
         return convertView;
     }
